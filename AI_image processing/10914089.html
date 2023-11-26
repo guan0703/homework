@@ -1,0 +1,141 @@
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="資管4B 10914089 呂冠儀">
+    <style>
+        body {
+            background-color: #336666;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #fff;
+            margin-bottom: 0;
+        }
+
+        #rightImage1 {
+            width: 100%;
+            margin-top: 150px;
+            border: 5px solid #005757;
+            box-sizing: border-box;
+        }
+
+        #rightImage2 {
+            width: 150%;
+            border: 5px solid #005757;
+            box-sizing: border-box;
+        }
+
+        #container {
+            max-width: 1400px; /* 調整最大寬度 */
+            margin: 0 auto;
+            padding: 50px; /* 調整內間距 */
+            background-color: #C4E1E1;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            border-radius: 15px;
+        }
+
+        .image-container {
+            width: 49%;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        p {
+            color: #005757;
+            font-weight: 600; /* 中等粗細 */
+            margin-top: 5px; /* 調整上邊距 */
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+            border: 5px solid #005757;
+            box-sizing: border-box;
+            transition: transform 0.3s; /* 添加動畫效果 */
+        }
+
+        img:hover {
+            transform: scale(1.1); /* 放大效果 */
+        }
+
+        h2 {
+            color: #006000;
+            font-weight: 700; /* 加粗體 */
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .overlay img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 5px solid #005757;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <h1>資管4B 10914089 呂冠儀</h1>
+    <div id="container">
+        <div class="image-container" onclick="showImage('images/a1.jpg')">
+            <h2>更改前</h2>
+            <img src="images/a1.jpg">
+            <p>點擊照片即可放大</p>
+        </div>
+        <div class="image-container" onclick="showImage('images/a2.jpeg')">
+            <h2>更改後</h2>
+            <img id="rightImage1" src="images/a2.jpeg">
+            <p>點擊照片即可放大</p>
+        </div>
+        <div class="image-container" onclick="showImage('images/b1.jpg')">
+            <h2>更改前</h2>
+            <img src="images/b1.jpg">
+            <p>點擊照片即可放大</p>
+        </div>
+        <div class="image-container" onclick="showImage('images/b2.jpg')">
+            <h2>更改後</h2>
+            <img id="rightImage2" src="images/b2.jpg">
+            <p>點擊照片即可放大</p>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="closeOverlay()">
+        <img id="overlayImg" src="">
+    </div>
+
+    <script>
+        function showImage(src) {
+            var overlay = document.getElementById('overlay');
+            var overlayImg = document.getElementById('overlayImg');
+            overlayImg.src = src;
+            overlay.style.display = 'flex';
+        }
+
+        function closeOverlay() {
+            var overlay = document.getElementById('overlay');
+            overlay.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
